@@ -9,6 +9,7 @@
   imports = [
     ./config/tmux.nix
     ./config/git.nix
+    ./config/fish.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -73,7 +74,7 @@
   #  /etc/profiles/per-user/elodie/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
