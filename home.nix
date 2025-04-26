@@ -11,6 +11,7 @@
     ./config/git.nix
     ./config/fish.nix
     ./config/hyprland.nix
+    ./config/kitty.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
