@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./elodie.nix
       inputs.home-manager.nixosModules.default
+      ./config/kanata.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -36,10 +37,6 @@
     packages = with pkgs; [ terminus_font ];
     useXkbConfig = true; # use xkb.options in tty.
   };
-  services.xserver.xkb = {
-    layout = "us";
-    options = "ctrl:swapcaps";
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -57,12 +54,12 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  services.pulseaudio.enable = true;
+  # services.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -75,6 +72,7 @@
   environment.systemPackages = with pkgs; [
     git
     home-manager
+    kanata
     ripgrep
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -97,6 +95,8 @@
   #   enableSSHSupport = true;
   # };
   programs.fish.enable = true;
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # List services that you want to enable:
 
