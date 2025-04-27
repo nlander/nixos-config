@@ -37,10 +37,6 @@
     packages = with pkgs; [ terminus_font ];
     useXkbConfig = true; # use xkb.options in tty.
   };
-  services.xserver.xkb = {
-    layout = "us";
-    options = "ctrl:swapcaps";
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
