@@ -4,7 +4,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      size = 32;
+      size = 24;
       name = "DejaVu Sans";
     };
     settings = {

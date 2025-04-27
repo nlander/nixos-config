@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./elodie.nix
       inputs.home-manager.nixosModules.default
+      ./config/kanata.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -75,6 +76,7 @@
   environment.systemPackages = with pkgs; [
     git
     home-manager
+    kanata
     ripgrep
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
