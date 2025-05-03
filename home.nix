@@ -7,11 +7,12 @@
   home.homeDirectory = "/home/elodie";
 
   imports = [
-    ./config/tmux.nix
-    ./config/git.nix
+    ./config/firefox.nix
     ./config/fish.nix
+    ./config/git.nix
     ./config/hyprland.nix
     ./config/kitty.nix
+    ./config/tmux.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

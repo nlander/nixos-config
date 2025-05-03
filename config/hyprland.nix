@@ -6,6 +6,7 @@
     settings = {
       bind = [
         "SUPER, T, exec, kitty"
+        "SUPER, F, exec, firefox"
       ];
     };
   };
