@@ -2,12 +2,23 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+      config.allowUnfree = true;
+    };
+
+    # unstablePkgs = with nixpkgs; {
+    #   inherit system;
+    #   config.allowUnfree = true;
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      # extraSpecialArgs = {
+      #   inherit nixpkgs;
+      #   firefox-addons-allowUnfree = nixpkgs.callPackage firefox-addons { };
+      # };
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
