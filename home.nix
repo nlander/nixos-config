@@ -83,6 +83,7 @@
   #
   home.sessionVariables = {
     EDITOR = "vim";
+    MOZ_ENABLE_WAYLAND = "0";
   };
 
   # Let Home Manager install and manage itself.
