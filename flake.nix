@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.config.allowUnfree = true;
 
     home-manager = {
       url = "github:nix-community/home-manager";

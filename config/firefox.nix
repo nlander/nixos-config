@@ -1,11 +1,17 @@
 { pkgs, inputs, ... }:
 
+let
+  unfree-addons = import inputs.firefox-addons {
+    inherit (pkgs) system;
+    config.allowUnfree = true;
+  };
+in
 {
   programs.firefox = {
     enable = true;
     profiles.elodie = {
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-        lastpass-password-manager
+      extensions = [
+        unfree-addons.packages."x86_64-linux".lastpass-password-manager
       ];
     };
   };
