@@ -43,3 +43,64 @@ error:
              | ^
             2|   fetchurl,
 ```
+
+```
+elodie@nixos ~/c/nix (add-firefox)> sudo nixos-rebuild switch --flake /home/elodie/code/nix/#default
+building the system configuration...
+error:
+       … while calling the 'head' builtin
+         at /nix/store/5ds20jm3x2s4z7wn3581r6lc9ybmh45b-source/lib/attrsets.nix:1534:13:
+         1533|           if length values == 1 || pred here (elemAt values 1) (head values) then
+         1534|             head values
+             |             ^
+         1535|           else
+
+       … while evaluating the attribute 'value'
+         at /nix/store/5ds20jm3x2s4z7wn3581r6lc9ybmh45b-source/lib/modules.nix:1084:7:
+         1083|     // {
+         1084|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1085|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `system.build.toplevel':
+
+       … while evaluating definitions from `/nix/store/5ds20jm3x2s4z7wn3581r6lc9ybmh45b-source/nixos/modules/system/activation/top-level.nix':
+
+       … while evaluating the option `warnings':
+
+       … while evaluating definitions from `/nix/store/5ds20jm3x2s4z7wn3581r6lc9ybmh45b-source/nixos/modules/system/boot/systemd.nix':
+
+       … while evaluating the option `systemd.services.home-manager-elodie.serviceConfig':
+
+       … while evaluating definitions from `/nix/store/mbpg6sm7xaahdsxs8g3hc0r2hfgcpchq-source/nixos':
+
+       … while evaluating the option `home-manager.users.elodie.home.file.".mozilla/firefox/elodie/extensions".source':
+
+       … while evaluating definitions from `/nix/store/mbpg6sm7xaahdsxs8g3hc0r2hfgcpchq-source/modules/programs/firefox.nix':
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: Package ‘lastpass-password-manager-4.146.9’ in /nix/store/anzcgaapqq8iqgvz78jsi4lzbkmyqzlj-source/pkgs/firefox-addons/generated-firefox-addons.nix:6969 has an unfree license (‘unfree’), refusing to evaluate.
+
+       a) To temporarily allow unfree packages, you can use an environment variable
+          for a single invocation of the nix tools.
+
+            $ export NIXPKGS_ALLOW_UNFREE=1
+
+          Note: When using `nix shell`, `nix build`, `nix develop`, etc with a flake,
+                then pass `--impure` in order to allow use of environment variables.
+
+       b) For `nixos-rebuild` you can set
+         { nixpkgs.config.allowUnfree = true; }
+       in configuration.nix to override this.
+
+       Alternatively you can configure a predicate to allow specific packages:
+         { nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "lastpass-password-manager"
+           ];
+         }
+
+       c) For `nix-env`, `nix-build`, `nix-shell` or any other Nix command you can add
+         { allowUnfree = true; }
+       to ~/.config/nixpkgs/config.nix.
+```
