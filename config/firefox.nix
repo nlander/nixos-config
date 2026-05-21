@@ -1,10 +1,10 @@
-{ pkgs, inputs, firefox-addons-allowUnfree, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.firefox = {
     enable = true;
     profiles.elodie = {
-      extensions = with firefox-addons-allowUnfree; [
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         lastpass-password-manager
       ];
     };
