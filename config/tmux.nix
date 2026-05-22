@@ -23,7 +23,7 @@ bind ] run-shell '
   if [ "$wl" = "$tx" ]; then
     tmux send-keys -l "$wl";
   else
-    echo "$wl" | tmux load-buffer - && tmux paste-buffer -p -n;
+    echo -n "$wl" | tmux load-buffer - && tmux paste-buffer -p;
   fi;
   true
 '
