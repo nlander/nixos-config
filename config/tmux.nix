@@ -17,7 +17,16 @@ set -g status-right ' #{?client_prefix,#[reverse]prefix#[noreverse] ,}"#{=21:pan
 set -s set-clipboard on
 
 # Paste from wl-paste instead of tmux buffer
-bind ] run "wl=\$(wl-paste); tx=\$(tmux show-buffer 2>/dev/null); [ \"\$wl\" = \"\$tx\" ] && tmux paste-buffer -p | (echo \"\$wl\" | tmux load-buffer - && tmux paste-buffer -p)"
+bind ] run-shell '
+  wl=$(wl-paste);
+  tx=$(tmux show-buffer 2>/dev/null)
+  if [ $wl = $tx ]; then
+    tmux paste-buffer -p;
+  else
+    echo "$wl" | tmux load-buffer - && tmux paste-buffer -p;
+  fi;
+  true
+'
     '';
   };
 }
