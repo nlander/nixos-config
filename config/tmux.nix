@@ -14,7 +14,7 @@
 set -g status-right ' #{?client_prefix,#[reverse]prefix#[noreverse] ,}"#{=21:pane_title}" %H:%M %d-%b-%y'
 
 # Sync with external system clipboard (wl-clipboard)
-set -s set-clipboard on
+set -s set-clipboard external
 
 # Paste from wl-paste instead of tmux buffer
 bind ] run-shell '
