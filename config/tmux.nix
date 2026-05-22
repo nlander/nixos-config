@@ -21,7 +21,7 @@ bind ] run-shell '
   wl=$(wl-paste);
   tx=$(tmux show-buffer 2>/dev/null)
   if [ $wl = $tx ]; then
-    tmux paste-buffer -p;
+    tmux send-keys -l "$wl";
   else
     echo "$wl" | tmux load-buffer - && tmux paste-buffer -p;
   fi;
