@@ -11,12 +11,20 @@
   tab q w e r t y u i o p [ ] \ pgup
   caps a s d f g h j k l ; ' ent pgdn
   lshft z x c v b n m , . / rshft up end
-  lctl kana lmet lalt spc ralt rmet rctl left down rght
+  lctl kana lmet lalt spc ralt menu rctl left down rght
 )
 
 (deflayermap (default)
   caps lctl)
-  '';
+      '';
+
+    "kinesis-freestyle" = {
+        devices = [ "/dev/input/by-id/usb-KINESIS_CORPORATION_KB800HM_Kinesis_Freestyle2_for_Mac-event-kbd" ];
+        config = ''
+(defsrc caps lalt lmet)
+(deflayer default lctl lmet lalt)
+        '';
+      };
     };
   };
 }
