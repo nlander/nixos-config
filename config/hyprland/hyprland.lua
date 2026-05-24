@@ -59,7 +59,7 @@ hl.window_rule({
         class = "^(firefox)$",
         title = "^(Extension:)(.*)$",
     },
-    border = false,
+    border_size = 0,
 })
 
 hl.window_rule({
@@ -77,5 +77,5 @@ hl.window_rule({
         class = "^(firefox)$",
         title = "^$",
     },
-    border = false,
+    border_size = 0,
 })
