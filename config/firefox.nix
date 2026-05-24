@@ -1,12 +1,7 @@
 { pkgs, inputs, ... }:
 
 let
-  buildMozillaXpiAddon = pkgs.callPackage (
-    { stdenv, fetchurl, lib, ... }:
-    args: inputs.firefox-addons.lib.${pkgs.system}.buildFirefoxXpiAddon (args // {
-      inherit stdenv fetchurl lib;
-    })
-  ) { };
+  buildMozillaXpiAddon = pkgs.callPackage "${pkgs.path}/pkgs/build-support/firefox/wrapper.nix" { };
   addons = pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
     inherit buildMozillaXpiAddon;
   };
