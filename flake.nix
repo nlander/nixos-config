@@ -11,8 +11,8 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    nur-expressions = {
+      url = "gitlab:rycee/nur-expressions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
