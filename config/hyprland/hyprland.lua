@@ -24,15 +24,14 @@ hl.bind("ALT + SHIFT" .. " + " .. "H", hl.dsp.window.move({ direction = "left" }
 hl.monitor({
     output   = "HDMI-A-2",
     mode     = "1366x768@59.79",
-    position = "auto",
+    position = "0x0",
     scale    = 1,
 })
 
 hl.monitor({
     output   = "eDP-1",
     mode     = "1920x1080@60.02",
-    position = "0x0",
-    ["rightof"] = "HDMI-A-2",
+    position = "1366x0",
     scale    = 1.5,
 })
 
