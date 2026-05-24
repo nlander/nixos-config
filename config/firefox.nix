@@ -1,13 +1,17 @@
 { pkgs, inputs, ... }:
 
+let
+  buildMozillaXpiAddon = pkgs.callPackage "${inputs.firefox-addons}/../build-firefox-xpi-addon/default.nix" { };
+  addons = pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
+    inherit buildMozillaXpiAddon;
+  };
+in
 {
   programs.firefox = {
     enable = true;
     profiles.elodie = {
       extensions.packages = [
-        (pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
-          buildMozillaXpiAddon = inputs.firefox-addons.lib.${pkgs.system}.buildFirefoxXpiAddon;
-        }).lastpass-password-manager
+        addons.lastpass-password-manager
       ];
     };
   };
