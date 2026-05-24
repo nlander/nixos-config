@@ -11,8 +11,8 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    nur-expressions = {
-      url = "gitlab:rycee/nur-expressions";
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
