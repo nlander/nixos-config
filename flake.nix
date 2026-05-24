@@ -23,6 +23,10 @@
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        {
+          nixpkgs.config.allowUnfree = true;
+          nixpkgs.overlays = [ inputs.nur.overlays.default ];
+        }
       ];
     };
   };

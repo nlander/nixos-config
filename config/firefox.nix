@@ -5,7 +5,7 @@
     enable = true;
     profiles.elodie = {
       extensions.packages = [
-        inputs.nur.repos.rycee.firefox-addons.lastpass-password-manager
+        inputs.nur.repos.rycee.pkgs.firefox-addons.lastpass-password-manager
       ];
     };
   };
