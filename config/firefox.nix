@@ -1,13 +1,14 @@
 { pkgs, inputs, ... }:
 
+let
+  addons = inputs.firefox-addons.lib.${pkgs.system}.fromNixpkgs pkgs;
+in
 {
   programs.firefox = {
     enable = true;
     profiles.elodie = {
       extensions.packages = [
-        (pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
-          buildMozillaXpiAddon = pkgs.buildFirefoxXpiAddon;
-        }).lastpass-password-manager
+        addons.lastpass-password-manager
       ];
     };
   };
