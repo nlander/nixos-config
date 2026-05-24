@@ -10,7 +10,7 @@
     ./config/firefox.nix
     ./config/fish.nix
     ./config/git.nix
-    ./config/hyprland.nix
+    ./config/hyprland/hyprland.nix
     ./config/kitty.nix
     ./config/tmux.nix
   ];
