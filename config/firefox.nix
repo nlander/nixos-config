@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 let
-  buildMozillaXpiAddon = pkgs.callPackage "${pkgs.path}/pkgs/build-support/firefox/addons.nix" { };
+  buildMozillaXpiAddon = pkgs.callPackage "${inputs.firefox-addons}/lib.nix" { };
   addons = pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
     inherit buildMozillaXpiAddon;
   };
