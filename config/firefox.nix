@@ -1,11 +1,11 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox = {
     enable = true;
     profiles.elodie = {
       extensions.packages = [
-        inputs.nur.repos.rycee.pkgs.firefox-addons.lastpass-password-manager
+        pkgs.nur.repos.rycee.firefox-addons.lastpass-password-manager
       ];
     };
   };
