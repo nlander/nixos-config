@@ -78,14 +78,6 @@
     wget
   ];
 
-  # Home Manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    backupFileExtension = "backup";
-    users = {
-      "elodie" = import ./home.nix;
-    };
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
