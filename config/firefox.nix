@@ -6,7 +6,7 @@
     profiles.elodie = {
       extensions.packages = [
         (pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
-          buildMozillaXpiAddon = pkgs.buildFirefoxXpiAddon;
+          buildMozillaXpiAddon = inputs.firefox-addons.lib.${pkgs.system}.buildFirefoxXpiAddon;
         }).lastpass-password-manager
       ];
     };
