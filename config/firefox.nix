@@ -1,12 +1,9 @@
 { pkgs, inputs, ... }:
 
 let
-  repoBuilder = pkgs.callPackage (
-    { stdenv, fetchurl, lib }:
-    args: inputs.firefox-addons.lib.${pkgs.system}.buildFirefoxXpiAddon (args // {
-      inherit stdenv fetchurl lib;
-    })
-  ) { };
+  repoBuilder = pkgs.callPackage "${pkgs.path}/pkgs/build-support/firefox/mk-xpi-addon.nix" {
+    inherit (pkgs) stdenv fetchurl;
+  };
   addons = pkgs.callPackage "${inputs.firefox-addons}/default.nix" {
     buildMozillaXpiAddon = repoBuilder;
   };
