@@ -34,6 +34,7 @@
   home.packages = with pkgs; [
     wl-clipboard
     evtest
+    gimp
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
