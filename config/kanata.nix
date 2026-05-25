@@ -4,7 +4,9 @@
   services.kanata = {
     enable = true;
     keyboards = {
-      "lemur".config = ''
+      "lemur" = {
+        devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
+        config = ''
 (defsrc
   esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 sys break ins del
   grv 1 2 3 4 5 6 7 8 9 0 min eql bspc home
@@ -17,6 +19,7 @@
 (deflayermap (default)
   caps lctl)
       '';
+    };
 
     "kinesis-freestyle" = {
         devices = [ "/dev/input/by-id/usb-KINESIS_CORPORATION_KB800HM_Kinesis_Freestyle2_for_Mac-event-kbd" ];
