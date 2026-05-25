@@ -5,6 +5,8 @@ hl.bind("SUPER" .. " + " .. "T", hl.dsp.exec_cmd("kitty"))
 
 hl.bind("SUPER" .. " + " .. "F", hl.dsp.exec_cmd("firefox"))
 
+hl.bind("SUPER" .. " + " .. "V", hl.dsp.exec_cmd("gimp"))
+
 hl.bind("ALT" .. " + " .. "TAB", hl.dsp.window.cycle_next())
 
 hl.bind("ALT" .. " + " .. "SPACE", hl.dsp.window.fullscreen())
