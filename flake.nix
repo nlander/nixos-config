@@ -28,7 +28,6 @@
           nixpkgs.overlays = [ inputs.nur.overlays.default ];
           # Home Manager
           home-manager = {
-            useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
             backupFileExtension = "backup";
