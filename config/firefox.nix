@@ -1,9 +1,8 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox = {
     enable = true;
-    configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles.elodie = {
       settings = {
         "browser.startup.page" = 3; # reload previous tabs
