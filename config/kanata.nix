@@ -32,15 +32,20 @@
   (lmet c) (multi lmet c)
   (lmet v) (multi lmet v)
   (lmet)   lalt
+  (a) a
+  (z) z
+  (x) x
+  (c) c
+  (v) v
 )
 (deflayer default
   lctl lmet
   (chord macro_triggers lmet)
-  a
-  z
-  x
-  c
-  v
+  (chord macro_triggers a)
+  (chord macro_triggers z)
+  (chord macro_triggers x)
+  (chord macro_triggers c)
+  (chord macro_triggers v)
 )
         '';
       };
