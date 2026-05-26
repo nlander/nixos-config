@@ -25,11 +25,21 @@
         devices = [ "/dev/input/by-id/usb-KINESIS_CORPORATION_KB800HM_Kinesis_Freestyle2_for_Mac-event-kbd" ];
         config = ''
 (defsrc caps lalt lmet a z x c v)
-(defalias
-  macro_mod (tap-hold-press 0 20 lalt (layer-while-held macro-bypass))
+(defchords macro_triggers 2
+  (lmet a) (multi lmet a)
+  (lmet z) (multi lmet z)
+  (lmet x) (multi lmet x)
+  (lmet c) (multi lmet c)
+  (lmet v) (multi lmet v)
 )
-(deflayer default lctl lmet @macro_mod a z x c v)
-(deflayer macro-bypass _ _ _ M-a M-z M-x M-c M-v)
+(deflayer default
+  lctl lmet lalt
+  (chord macro_triggers a)
+  (chord macro_triggers z)
+  (chord macro_triggers x)
+  (chord macro_triggers c)
+  (chord macro_triggers v)
+)
         '';
       };
     };
