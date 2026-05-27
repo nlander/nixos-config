@@ -38,46 +38,22 @@ hl.monitor({
 })
 
 hl.window_rule({
-    name  = "float",
+    name  = "Firefox Extension",
     match = {
         class = "^(firefox)$",
         title = "^(Extension:)(.*)$",
     },
     float = true,
-})
-
-hl.window_rule({
-    name  = "stayfocused",
-    match = {
-        class = "^(firefox)$",
-        title = "^(Extension:)(.*)$",
-    },
     stay_focused = true,
-})
-
-hl.window_rule({
-    name  = "noborder",
-    match = {
-        class = "^(firefox)$",
-        title = "^(Extension:)(.*)$",
-    },
     border_size = 0,
 })
 
 hl.window_rule({
-    name  = "float",
+    name  = "Firefox Unnamed",
     match = {
         class = "^(firefox)$",
         title = "^$",
     },
     float = true,
-})
-
-hl.window_rule({
-    name  = "noborder",
-    match = {
-        class = "^(firefox)$",
-        title = "^$",
-    },
     border_size = 0,
 })
