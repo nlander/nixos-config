@@ -3,9 +3,9 @@
 
 hl.bind("SUPER" .. " + " .. "T", hl.dsp.exec_cmd("kitty"))
 
-hl.bind("SUPER" .. " + " .. "F", hl.dsp.exec_cmd("firefox"))
+hl.bind("SUPER" .. " + " .. "F", hl.dsp.focus({ workspace = "name:firefox" }))
 
-hl.bind("SUPER" .. " + " .. "V", hl.dsp.exec_cmd("gimp"))
+hl.bind("SUPER" .. " + " .. "V", hl.dsp.focus({ workspace = "name:gimp" }))
 
 hl.bind("ALT" .. " + " .. "TAB", hl.dsp.window.cycle_next())
 
@@ -35,6 +35,18 @@ hl.monitor({
     mode     = "1920x1080@60.02",
     position = "1366x0",
     scale    = 1.5,
+})
+
+hl.workspace_rule({
+    workspace = "name:gimp",
+    monitor = "HDMI-A-2",
+    on_created_empty = "gimp",
+})
+
+hl.workspace_rule({
+    workspace = "name:firefox",
+    monitor = "HDMI-A-2",
+    on_created_empty = "firefox",
 })
 
 hl.window_rule({
