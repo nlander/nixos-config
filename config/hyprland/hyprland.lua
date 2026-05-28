@@ -21,13 +21,13 @@ hl.bind("ALT" .. " + " .. "L", hl.dsp.focus({ workspace = "e+1" }))
 
 hl.bind("ALT" .. " + " .. "H", hl.dsp.focus({ workspace = "e-1" }))
 
-hl.bind("ALT + CONTROL" .. " + " .. "L", hl.dsp.window.move({ direction = "right" }))
+hl.bind("ALT + CONTROL" .. " + " .. "L", hl.dsp.window.move({ workspace = "e+1" }))
 
-hl.bind("ALT + CONTROL" .. " + " .. "H", hl.dsp.window.move({ direction = "left" }))
+hl.bind("ALT + CONTROL" .. " + " .. "H", hl.dsp.window.move({ workspace = "e-1" }))
 
-hl.bind("ALT + SHIFT" .. " + " .. "L", hl.dsp.window.move({ direction = "right" }, { follow = false }))
+hl.bind("ALT + SHIFT" .. " + " .. "L", hl.dsp.window.move({ workspace = "e+1" }, { follow = false }))
 
-hl.bind("ALT + SHIFT" .. " + " .. "H", hl.dsp.window.move({ direction = "left" }, { follow = false }))
+hl.bind("ALT + SHIFT" .. " + " .. "H", hl.dsp.window.move({ workspace = "e-1" }, { follow = false }))
 
 hl.monitor({
     output   = "HDMI-A-2",
