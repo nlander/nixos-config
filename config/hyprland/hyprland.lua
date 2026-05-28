@@ -1,7 +1,7 @@
 ---@module 'hl'
 
 
-hl.bind("SUPER" .. " + " .. "T", hl.dsp.exec_cmd("kitty"))
+hl.bind("SUPER" .. " + " .. "T", hl.dsp.focus({ workspace = "name:kitty" }))
 
 hl.bind("SUPER" .. " + " .. "F", hl.dsp.focus({ workspace = "name:firefox" }))
 
@@ -41,6 +41,12 @@ hl.monitor({
     mode     = "1920x1080@60.02",
     position = "1366x0",
     scale    = 1.5,
+})
+
+hl.workspace_rule({
+    workspace = "name:kitty",
+    monitor = "eDP-1",
+    on_created_empty = "kitty",
 })
 
 hl.workspace_rule({
