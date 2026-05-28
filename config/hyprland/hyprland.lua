@@ -15,9 +15,9 @@ hl.bind("ALT" .. " + " .. "TAB", hl.dsp.window.cycle_next())
 
 hl.bind("ALT" .. " + " .. "SPACE", hl.dsp.window.fullscreen())
 
-hl.bind("ALT" .. " + " .. "L", hl.dsp.focus({ direction = "right" }))
+hl.bind("ALT" .. " + " .. "L", hl.dsp.focus({ workspace = "e+1" }))
 
-hl.bind("ALT" .. " + " .. "H", hl.dsp.focus({ direction = "left" }))
+hl.bind("ALT" .. " + " .. "H", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind("ALT + CONTROL" .. " + " .. "L", hl.dsp.window.move({ direction = "right" }))
 
