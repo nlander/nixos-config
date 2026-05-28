@@ -3,9 +3,9 @@
 
 hl.bind("SUPER" .. " + " .. "T", hl.dsp.focus({ workspace = "name:kitty" }))
 
-hl.bind("SUPER" .. " + " .. "F", hl.dsp.focus({ workspace = "name:firefox" }))
+hl.bind("SUPER" .. " + " .. "F", hl.dsp.focus({ workspace = "name:2_firefox" }))
 
-hl.bind("SUPER" .. " + " .. "V", hl.dsp.focus({ workspace = "name:gimp" }))
+hl.bind("SUPER" .. " + " .. "V", hl.dsp.focus({ workspace = "name:1_gimp" }))
 
 hl.bind("SUPER" .. " + " .. "1", hl.dsp.focus({ workspace = 1 }))
 
@@ -50,13 +50,13 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
-    workspace = "name:gimp",
+    workspace = "name:1_gimp",
     monitor = "HDMI-A-2",
     on_created_empty = "gimp",
 })
 
 hl.workspace_rule({
-    workspace = "name:firefox",
+    workspace = "name:2_firefox",
     monitor = "HDMI-A-2",
     on_created_empty = "firefox",
 })
