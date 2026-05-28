@@ -7,6 +7,10 @@ hl.bind("SUPER" .. " + " .. "F", hl.dsp.focus({ workspace = "name:firefox" }))
 
 hl.bind("SUPER" .. " + " .. "V", hl.dsp.focus({ workspace = "name:gimp" }))
 
+hl.bind("SUPER" .. " + " .. "1", hl.dsp.focus({ workspace = 1 }))
+
+hl.bind("SUPER" .. " + " .. "2", hl.dsp.focus({ workspace = 2 }))
+
 hl.bind("ALT" .. " + " .. "TAB", hl.dsp.window.cycle_next())
 
 hl.bind("ALT" .. " + " .. "SPACE", hl.dsp.window.fullscreen())
