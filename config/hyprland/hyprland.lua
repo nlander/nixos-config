@@ -15,6 +15,8 @@ hl.bind("ALT" .. " + " .. "TAB", hl.dsp.window.cycle_next())
 
 hl.bind("ALT" .. " + " .. "SPACE", hl.dsp.window.fullscreen())
 
+hl.bind("ALT" .. " + " .. "M", hl.dsp.focus({ monitor = "+1" }))
+
 hl.bind("ALT" .. " + " .. "L", hl.dsp.focus({ workspace = "e+1" }))
 
 hl.bind("ALT" .. " + " .. "H", hl.dsp.focus({ workspace = "e-1" }))
