@@ -6,6 +6,7 @@
     settings.user = {
       email = "elodie@elodiecodes.com";
       name = "Elodie Lander";
+      defaultBranch = "main";
     };
   };
 }
