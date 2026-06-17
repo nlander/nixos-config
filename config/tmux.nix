@@ -17,16 +17,7 @@ set -g status-right ' #{?client_prefix,#[reverse]prefix#[noreverse] ,}"#{=21:pan
 set -s set-clipboard external
 
 # Paste from wl-paste instead of tmux buffer
-bind ] run-shell '
-  wl=$(wl-paste);
-  tx=$(tmux show-buffer 2>/dev/null)
-  if [ "$wl" = "$tx" ]; then
-    tmux send-keys -l "$wl";
-  else
-    echo -n "$wl" | tmux load-buffer - && tmux paste-buffer -p;
-  fi;
-  true
-'
+bind ] run-shell 'tmux-paste'
     '';
   };
 }
