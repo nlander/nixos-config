@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -39,6 +39,7 @@
     evtest
     gimp
     unzip
+    inputs.tmux-paste.packages.${pkgs.system}.default
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

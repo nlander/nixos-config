@@ -15,6 +15,8 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    tmux-paste.url = "github:nlander/tmux-paste";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
