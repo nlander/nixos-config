@@ -586,11 +586,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1781728057,
-        "narHash": "sha256-ygSx8S6Q5iHi0PHqfGv90C/czhaXndAOdzB9+RaaYzc=",
+        "lastModified": 1781894614,
+        "narHash": "sha256-owmvflNsMQgKNVLN024I0wcn/6VFnJrvTGUF71PPB0M=",
         "owner": "nlander",
         "repo": "tmux-paste",
-        "rev": "4090d7bb5abdbc45dbf1ce0ad009fa8f249de592",
+        "rev": "f8ced86d84fdecf9a11c965ebad7e9317561dceb",
         "type": "github"
       },
       "original": {
