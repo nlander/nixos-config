@@ -107,4 +107,5 @@ hl.window_rule({
     },
     float = true,
     stay_focused = true,
+    center = true,
 })
