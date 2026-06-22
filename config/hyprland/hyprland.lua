@@ -3,6 +3,8 @@
 
 hl.bind("SUPER" .. " + " .. "T", hl.dsp.focus({ workspace = "name:kitty" }))
 
+hl.bind("SUPER" .. " + " .. "Z", hl.dsp.focus({ workspace = "name:zoom" }))
+
 hl.bind("SUPER" .. " + " .. "F", hl.dsp.focus({ workspace = "name:2_firefox" }))
 
 hl.bind("SUPER" .. " + " .. "V", hl.dsp.focus({ workspace = "name:1_gimp" }))
@@ -50,6 +52,12 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace = "name:zoom",
+    monitor = "HDMI-A-2",
+    on_created_empty = "zoom",
+})
+
+hl.workspace_rule({
     workspace = "name:1_gimp",
     monitor = "HDMI-A-2",
     on_created_empty = "gimp",
@@ -80,4 +88,23 @@ hl.window_rule({
     },
     float = true,
     border_size = 0,
+})
+
+hl.window_rule({
+    name  = "Zoom Main & Meetings",
+    match = {
+        class = "^(zoom)$",
+	title = "^(Zoom Meeting|Zoom Workplace)$",
+    },
+    float = false,
+})
+
+hl.window_rule({
+    name  = "Zoom Popups & Toolbars",
+    match = {
+        class = "^(zoom)$",
+	title = "^(Settings|Notification|Chat|Participants|Waiting Room|Join Meeting|as_wrapper)$",
+    },
+    float = true,
+    stay_focused = true,
 })
