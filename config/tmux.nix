@@ -18,6 +18,12 @@ set -s set-clipboard external
 
 # Paste from wl-paste instead of tmux buffer
 bind ] run-shell 'tmux-paste'
+
+# Copy debug information for files in .debug-files
+bind d run-shell "debug-files"
+
+# Copy debug information including tmux paste buffer
+bind D run-shell "debug-files --include-buffer"
     '';
   };
 }
