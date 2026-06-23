@@ -40,11 +40,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1782172957,
-        "narHash": "sha256-9iwr6pMWS/YkpD0XCNcOb6VBZghCXM7F6PEXzcBfSDg=",
+        "lastModified": 1782176861,
+        "narHash": "sha256-g0RVxhGCBQHB95hIOKM6uFn+0JVwV5gdEK9/uOKEN1g=",
         "owner": "nlander",
         "repo": "debug-files",
-        "rev": "0fdd8f7b8a07cd9b7ec3069c903545a0f0f1d2c5",
+        "rev": "f8291f6e09111d7fa125d82f94d153f415957448",
         "type": "github"
       },
       "original": {
