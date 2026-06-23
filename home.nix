@@ -41,6 +41,7 @@
     unzip
     zoom-us
     inputs.tmux-paste.packages.${pkgs.system}.default
+    inputs.debug-files.packages.${pkgs.system}.default
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

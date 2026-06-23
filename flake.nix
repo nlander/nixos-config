@@ -17,6 +17,7 @@
     };
 
     tmux-paste.url = "github:nlander/tmux-paste";
+    debug-files.url = "github:nlander/debug-files";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
