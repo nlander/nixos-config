@@ -65,7 +65,6 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace = "name:2_firefox",
-    monitor = "HDMI-A-2",
     on_created_empty = "firefox",
 })
 
