@@ -76,7 +76,6 @@ hl.window_rule({
         title = "^(Extension:)(.*)$",
     },
     float = true,
-    stay_focused = true,
     border_size = 0,
 })
 
