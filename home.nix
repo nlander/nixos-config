@@ -10,7 +10,6 @@
     ./config/firefox.nix
     ./config/fish.nix
     ./config/git.nix
-    ./config/hyprland/hyprland.nix
     ./config/kitty.nix
     ./config/tmux.nix
   ];
@@ -20,7 +19,7 @@
     package = pkgs.breeze-hacked-cursor-theme;
     size = 32;
     gtk.enable = true;
-    hyprcursor.enable = true;
+    # hyprcursor.enable = true;
   };
 
   # This value determines the Home Manager release that your configuration is

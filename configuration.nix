@@ -92,8 +92,11 @@
   #   enableSSHSupport = true;
   # };
   programs.fish.enable = true;
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+  programs.hyprland.enable = false;
+  # programs.hyprland.package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # List services that you want to enable:
 
