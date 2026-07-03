@@ -20,9 +20,10 @@
     debug-files.url = "github:nlander/debug-files";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+  outputs = { self, nixpkgs, ... }@inputs:
+  let
+    mkSystem = windowManager: nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs windowManager; };
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
@@ -33,7 +34,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
+            extraSpecialArgs = { inherit inputs windowManager; };
             backupFileExtension = "backup";
             users = {
               "elodie" = import ./home.nix;
@@ -41,6 +42,11 @@
           };
         }
       ];
+    };
+  in {
+    nixosConfigurations = {
+      gnome = mkSystem "gnome";
+      hyprland = mkSystem "hyprland";
     };
   };
 }

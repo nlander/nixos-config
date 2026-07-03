@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, windowManager, ... }:
 
 {
   imports =
@@ -95,11 +95,11 @@
   #   enableSSHSupport = true;
   # };
   programs.fish.enable = true;
-  programs.hyprland.enable = false;
-  # programs.hyprland.package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+  programs.hyprland.enable = windowManager == "hyprland";
+  programs.hyprland.package = lib.mkIf (windowManager == "hyprland") inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = windowManager == "gnome";
 
   # List services that you want to enable:
 

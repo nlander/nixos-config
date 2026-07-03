@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, windowManager, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -12,14 +12,15 @@
     ./config/git.nix
     ./config/kitty.nix
     ./config/tmux.nix
-  ];
+  ] ++ lib.optional (windowManager == "hyprland") ./config/hyprland/hyprland.nix
+    ++ lib.optional (windowManager == "gnome") ./config/gnome.nix;
 
   home.pointerCursor = {
     name = "Breeze_Hacked";
     package = pkgs.breeze-hacked-cursor-theme;
     size = 32;
     gtk.enable = true;
-    # hyprcursor.enable = true;
+    hyprcursor.enable = windowManager == "hyprland";
   };
 
   # This value determines the Home Manager release that your configuration is
