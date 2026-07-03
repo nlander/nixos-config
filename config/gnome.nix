@@ -8,5 +8,9 @@
        "move-to-workspace-right" = ["<Primary><Alt>l"];
        "toggle-fullscreen" = ["<Alt>F11"];
     };
+    "org/gnome/desktop/interface" = {
+       "cursor-theme" = "Breeze_Hacked";
+       "cursor-size" = 32;
+    };
   };
 }
