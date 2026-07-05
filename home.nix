@@ -40,6 +40,7 @@
     gimp
     unzip
     zoom-us
+    google-chrome
     inputs.tmux-paste.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.debug-files.packages.${pkgs.stdenv.hostPlatform.system}.default
     # # Adds the 'hello' command to your environment. It prints a friendly
