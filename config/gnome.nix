@@ -3,7 +3,7 @@
   dconf.settings = {
     "org/gnome/desktop/wm/keybindings" = {
        "switch-applications-backward" = ["<Alt>h"];
-       "switch-applications" = ["<Alt>l"];
+       "switch-applications" = ["<Alt>m"];
        "move-to-workspace-left" = ["<Primary><Alt>h"];
        "move-to-workspace-right" = ["<Primary><Alt>l"];
        "toggle-fullscreen" = ["<Alt>F11"];
