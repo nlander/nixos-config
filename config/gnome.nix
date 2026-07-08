@@ -12,5 +12,12 @@
        "cursor-theme" = "Breeze_Hacked";
        "cursor-size" = 32;
     };
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-temperature = 2500;
+      night-light-schedule-automatic = false;
+      night-light-schedule-from = 0.0;
+      night-light-schedule-to = 0.0;
+    };
   };
 }
