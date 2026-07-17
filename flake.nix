@@ -22,8 +22,8 @@
 
   outputs = { self, nixpkgs, ... }@inputs:
   let
-    mkSystem = windowManager: nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs windowManager; };
+    mkSystem = systemParameters: nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs systemParameters; };
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
@@ -34,7 +34,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = { inherit inputs windowManager; };
+            extraSpecialArgs = { inherit inputs systemParameters; };
             backupFileExtension = "backup";
             users = {
               "elodie" = import ./home.nix;
@@ -45,8 +45,8 @@
     };
   in {
     nixosConfigurations = {
-      gnome = mkSystem "gnome";
-      hyprland = mkSystem "hyprland";
+      lemur-gnome = mkSystem { windowManager = "gnome"; machine = "lemur"; };
+      legion-gnome = mkSystem { windowManager = "gnome"; machine = "legion"; };
     };
   };
 }

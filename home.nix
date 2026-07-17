@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, windowManager, ... }:
+{ config, pkgs, lib, inputs, systemParameters, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -12,15 +12,15 @@
     ./config/git.nix
     ./config/kitty.nix
     ./config/tmux.nix
-  ] ++ lib.optional (windowManager == "hyprland") ./config/hyprland/hyprland.nix
-    ++ lib.optional (windowManager == "gnome") ./config/gnome.nix;
+  ] ++ lib.optional (systemParameters.windowManager == "hyprland") ./config/hyprland/hyprland.nix
+    ++ lib.optional (systemParameters.windowManager == "gnome") ./config/gnome.nix;
 
   home.pointerCursor = {
     name = "Breeze_Hacked";
     package = pkgs.breeze-hacked-cursor-theme;
     size = 32;
     gtk.enable = true;
-    hyprcursor.enable = windowManager == "hyprland";
+    hyprcursor.enable = systemParameters.windowManager == "hyprland";
   };
 
   # This value determines the Home Manager release that your configuration is
@@ -68,7 +68,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/monitors.xml" = lib.mkIf (windowManager == "gnome") {
+    ".config/monitors.xml" = lib.mkIf (systemParameters.windowManager == "gnome") {
       source = config/monitors.xml;
     };
 

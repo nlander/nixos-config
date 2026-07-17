@@ -1,4 +1,4 @@
-{ pkgs, windowManager, ...}:
+{ pkgs, ...}:
 {
   dconf.settings = {
     "org/gnome/desktop/wm/keybindings" = {
