@@ -7,11 +7,12 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./machines/${systemParameters.machine}/hardware-configuration.nix
       ./elodie.nix
       inputs.home-manager.nixosModules.default
       ./config/kanata.nix
-    ];
+    ]
+    ++ lib.optionals (systemParameters.machine == "legion") [ ./machines/legion/config.nix ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -43,7 +44,10 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
   
 
   # Configure keymap in X11
@@ -94,6 +98,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.steam.enable = true;
   programs.fish.enable = true;
   programs.hyprland.enable = systemParameters.windowManager == "hyprland";
   programs.hyprland.package = lib.mkIf (systemParameters.windowManager == "hyprland") inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
