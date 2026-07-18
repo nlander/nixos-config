@@ -18,10 +18,10 @@
 
 (deflayermap (default)
   caps lctl)
-      '';
-    };
+        '';
+      };
 
-    "kinesis-freestyle" = {
+      "kinesis-freestyle" = {
         devices = [ "/dev/input/by-id/usb-KINESIS_CORPORATION_KB800HM_Kinesis_Freestyle2_for_Mac-event-kbd" ];
         config = ''
 (defsrc caps lalt lmet a c g v x z)
