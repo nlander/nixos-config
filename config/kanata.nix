@@ -4,8 +4,11 @@
   services.kanata = {
     enable = true;
     keyboards = {
-      "lemur" = {
-        devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
+      "laptop" = {
+        devices = [
+          "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:9:1.0-event-kbd"
+        ];
         config = ''
 (defsrc
   esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 sys break ins del
