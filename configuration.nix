@@ -39,7 +39,11 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [ "https://elodie.cachix.org" ];
+    trusted-public-keys = [ "elodie.cachix.org-1:gM/2+RR2gQol5czMn/3qBMGiAunacuwyEVq5+5MFCPM=" ];
+  };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -89,6 +93,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neovim
     wget
+    cachix
   ];
 
 
