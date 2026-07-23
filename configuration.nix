@@ -87,6 +87,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    gh
     home-manager
     kanata
     ripgrep
