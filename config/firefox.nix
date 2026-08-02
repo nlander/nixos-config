@@ -8,6 +8,8 @@
         "browser.startup.page" = 3; # reload previous tabs
         "browser.startup.homepage" = "about:home";
         "widget.wayland.use-move-to-rect" = false;
+        "signon.rememberSignons" = false;
+        "signon.autofillForms" = false;
       };
       extensions.packages = [
         pkgs.nur.repos.rycee.firefox-addons.lastpass-password-manager
