@@ -47,6 +47,12 @@
     nixosConfigurations = {
       lemur-gnome = mkSystem { windowManager = "gnome"; machine = "lemur"; };
       legion-gnome = mkSystem { windowManager = "gnome"; machine = "legion"; };
+      owncast-server = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration-owncast.nix
+        ];
+      };
     };
   };
 }
