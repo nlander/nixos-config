@@ -2,6 +2,9 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    ./machines/owncast-server/hardware-configuration.nix
+  ];
   # Basic System Settings
   networking.hostName = "owncast-server";
   time.timeZone = "America/Guayaquil";
@@ -31,7 +34,7 @@
   # Optional: Caddy reverse proxy for HTTPS
   services.caddy = {
     enable = true;
-    virtualHosts."stream.yourdomain.com" = {
+    virtualHosts."watch.elodielander.stream" = {
       extraConfig = ''
         reverse_proxy localhost:8080
       '';
