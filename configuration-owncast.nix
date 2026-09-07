@@ -18,7 +18,7 @@
   };
 
   # Networking & Firewall
-  networking.useNetworkd = true;
+  networking.useDHCP = true;
   services.openssh.enable = true;
   
   networking.firewall = {
