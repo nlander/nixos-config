@@ -17,6 +17,7 @@
     trusted-public-keys = [ "elodie.cachix.org-1:gM/2+RR2gQol5czMn/3qBMGiAunacuwyEVq5+5MFCPM=" ];
   };
 
+  boot.kernelParams = [ "console=ttyS0" ];
   # Networking & Firewall
   networking.useDHCP = false;
   networking.interfaces.ens3.useDHCP = true;
