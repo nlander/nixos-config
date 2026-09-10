@@ -19,7 +19,16 @@
 
   # Networking & Firewall
   networking.useDHCP = true;
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "prohibit-password";
+      PasswordAuthentication = false;
+    };
+  };
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTBgotue3SVKw6T9SIUvAgEthwxiIXdP5+Tmo6D7QwX lander89@gmail.com"
+  ];
   
   networking.firewall = {
     enable = true;
