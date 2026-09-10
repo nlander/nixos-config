@@ -18,8 +18,7 @@
   };
 
   # Networking & Firewall
-  networking.useDHCP = false;
-  networking.interfaces.ens3.useDHCP = true;
+  networking.useDHCP = true;
   services.openssh.enable = true;
   
   networking.firewall = {
