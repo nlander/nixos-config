@@ -18,12 +18,8 @@
   };
 
   # Networking & Firewall
-  systemd.network.enable = true;
-  systemd.network.networks."10-wan" = {
-    matchConfig.name = "*";
-    networkConfig.DHCP = "yes";
-    linkConfig.RequiredForOnline = "yes";
-  };
+  networking.useDHCP = false;
+  networking.interfaces.ens3.useDHCP = true;
   services.openssh.enable = true;
   
   networking.firewall = {
