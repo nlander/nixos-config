@@ -12,6 +12,7 @@
     ./config/git.nix
     ./config/kitty.nix
     ./config/tmux.nix
+    ./config/obs.nix
   ] ++ lib.optional (systemParameters.windowManager == "hyprland") ./config/hyprland/hyprland.nix
     ++ lib.optional (systemParameters.windowManager == "gnome") ./config/gnome.nix;
 
