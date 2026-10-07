@@ -16,9 +16,9 @@
         "browser.translations.automaticallyPopup" = false;
         "spellchecker.dictionary" = "es-ES";
       };
-      dictionaries = [ "es-ES" ];
       extensions.packages = [
         pkgs.nur.repos.rycee.firefox-addons.lastpass-password-manager
+        pkgs.nur.repos.rycee.firefox-addons.dictionary-spanish
       ];
     };
   };
