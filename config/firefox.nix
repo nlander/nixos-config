@@ -15,6 +15,7 @@
         "browser.translations.enable" = true;
         "browser.translations.automaticallyPopup" = false;
         "spellchecker.dictionary" = "es-ES";
+        "extensions.autoDisableScopes" = 0;
       };
       extensions.packages = [
         pkgs.nur.repos.rycee.firefox-addons.lastpass-password-manager
