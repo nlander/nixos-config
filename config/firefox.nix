@@ -10,6 +10,10 @@
         "widget.wayland.use-move-to-rect" = false;
         "signon.rememberSignons" = false;
         "signon.autofillForms" = false;
+        "intl.accept_languages" = "es-ES, es, en-US, en";
+        "layout.spellcheckDefault" = 1;
+        "browser.translations.enable" = true;
+        "browser.translations.automaticallyPopup" = false;
       };
       extensions.packages = [
         pkgs.nur.repos.rycee.firefox-addons.lastpass-password-manager
